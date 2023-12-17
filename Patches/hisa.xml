@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+    <!--
+        エキゾチックダストについて
+        ・露天掘りでは手に入らないが深部ドリルでは手に入る
+        ・岩塊の加工によって手に入るアイテム
+        → 岩塊を変換するかスキャンして掘るかぐらいの差であるため、こちらの深部ドリル設定は削除しない
+    -->
+
+    <!--
+        エネルギークリスタルについて
+        ・露天掘りと深部ドリル両方で手に入る
+        ・(Hisaコロニー以外の視点)露天掘りでポンと500シルバー近いものが最序盤に手に入るバランスブレイク
+        ・ウランとコンポーネントを元に作るアイテムがそのまま手に入ることの違和感
+        → 深部ドリル含めて採掘不可に
+    -->
+
+    <!-- EnergyCrystal -->
+    <Operation Class="PatchOperationFindMod">
+        <mods>
+            <li>Hisa Faction</li>
+        </mods>
+        <match Class="PatchOperationReplace">
+            <xpath>Defs/ThingDef[defName="MineableEC"]/building</xpath>
+            <value>
+                <building>
+                    <isResourceRock>true</isResourceRock>
+                    <mineableThing>Plasteel</mineableThing>
+                    <mineableYield>0</mineableYield>
+                    <mineableScatterCommonality>0</mineableScatterCommonality>
+                    <mineableScatterLumpSizeRange>
+                        <min>0</min>
+                        <max>0</max>
+                    </mineableScatterLumpSizeRange>
+                    <isInert>true</isInert>
+                </building>
+            </value>
+        </match>
+    </Operation>
+
+    <!-- 順を追ってパッチを適用しなければいけないタイプではないが、シーケンスでひとまとめにしたほうが良い？ -->
+    <Operation Class="PatchOperationFindMod">
+        <mods>
+            <li>Hisa Faction</li>
+        </mods>
+        <match Class="PatchOperationRemove">
+            <xpath>
+                Defs/ThingDef[defName="EnergyCrystal"]/deepCommonality |
+                Defs/ThingDef[defName="EnergyCrystal"]/deepCountPerPortion |
+                Defs/ThingDef[defName="EnergyCrystal"]/deepLumpSizeRange
+            </xpath>
+        </match>
+    </Operation>
+
+</Patch>

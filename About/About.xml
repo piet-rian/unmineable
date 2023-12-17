@@ -1,6 +1,28 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ModMetaData>
 
-    <!-- see. https://rimworldwiki.com/wiki/Modding_Tutorials/About.xml -->
+    <packageId>piet.rian.unmineable</packageId>
+
+    <name>unmineable</name>
+
+    <author>piet-rian</author>
+
+    <description> (This description was created using Deepl.)
+        Removes "compacted machinery" and "plasteel" veins from map gen and long range scanner sites, making them no longer mineable.
+
+        The effect extends to some of the minerals added by the mod.
+    </description>
+
+    <supportedVersions>
+        <li>1.4</li>
+    </supportedVersions>
+
+    <modVersion>1.0</modVersion>
+
+    <url>https://github.com/piet-rian/unmineable</url>
+
+    <loadAfter>
+        <li>ludeon.rimworld</li>
+    </loadAfter>
 
 </ModMetaData>

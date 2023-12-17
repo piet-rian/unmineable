@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+
+    <Operation Class="PatchOperationReplace">
+        <xpath>Defs/ThingDef[defName="MineableComponentsIndustrial"]/building</xpath>
+        <value>
+            <building>
+                <isResourceRock>true</isResourceRock>
+                <mineableThing>Plasteel</mineableThing>
+                <mineableYield>0</mineableYield>
+                <mineableScatterCommonality>0</mineableScatterCommonality>
+                <mineableScatterLumpSizeRange>
+                    <min>0</min>
+                    <max>0</max>
+                </mineableScatterLumpSizeRange>
+                <isInert>true</isInert>
+            </building>
+        </value>
+    </Operation>
+
+</Patch>
